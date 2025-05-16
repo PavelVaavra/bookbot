@@ -6,9 +6,19 @@ def get_book_text(path):
 
 def main():
     book = get_book_text('books/frankenstein.txt')
-    print(f"{word_counter(book)} "
-            "words found in the document")
-    print(sort_alpha_chars(char_counter(book)))
+
+    print(  
+        "============ BOOKBOT ============\n"
+        "Analyzing book found at books/frankenstein.txt...\n"
+        "----------- Word Count ----------\n"
+        f"Found {word_counter(book)} total words\n"
+        "--------- Character Count -------"
+    )
+    sorted_chars = sort_alpha_chars(char_counter(book))
+    for item in sorted_chars:
+        print(f"{item['char']}: {item['num']}")
+    print("============= END ===============")
+
 
 if __name__ == "__main__":
     main()
